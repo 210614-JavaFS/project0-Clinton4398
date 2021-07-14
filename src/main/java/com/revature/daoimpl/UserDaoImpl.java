@@ -27,7 +27,7 @@ public static ConnectionUtil cu = ConnectionUtil.getInstance();
 		User user =null;
 		
 		while(rs.next()) {
-			user = new User(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getBoolean(6));
+			user = new User(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4));
 			usersList.add(user);		
 		}
 		return usersList;
@@ -44,7 +44,7 @@ public static ConnectionUtil cu = ConnectionUtil.getInstance();
 		User user =null;
 		
 		while(rs.next()) {
-			user = new User(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getBoolean(6));
+			user = new User(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4));
 					
 		}
 		return user;
@@ -53,7 +53,7 @@ public static ConnectionUtil cu = ConnectionUtil.getInstance();
 	public static int createUser(User user) throws SQLException {
 		int usersCreated = 0;
 																												//find out what usersequence is
-		String sql = "INSERT INTO users(user_id, username, user_password, first_name, last_name, active) VALUES (nextval (\'userSeq\'),?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO users(user_id, username, user_password, first_name, last_name) VALUES (nextval (\'userSeq\'),?, ?, ?, ?)";
 		
 		Connection conn= cu.getConnection();
 		
@@ -62,7 +62,7 @@ public static ConnectionUtil cu = ConnectionUtil.getInstance();
 		ps.setString(2, user.getPassword());
 		ps.setString(3, user.getFirstname());
 		ps.setString(4, user.getLastname());
-		ps.setBoolean(5,  user.isActive());
+		//ps.setBoolean(5,  user.isActive());
 		ps.executeUpdate();
 
 		return usersCreated;
@@ -193,12 +193,12 @@ public static ConnectionUtil cu = ConnectionUtil.getInstance();
 		ps.executeUpdate();
 	}
 
-	public void updateActive(boolean active) throws SQLException{
+	/**public void updateActive(boolean active) throws SQLException{
 		Connection conn = cu.getConnection();
 		
 		String sql = "UPDATE users SET active = ? WHERE username = ?";
 		PreparedStatement ps= conn.prepareStatement(sql);
 		ps.setBoolean(5, active);
 		
-	}
+	}**/
 }

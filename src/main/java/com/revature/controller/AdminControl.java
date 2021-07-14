@@ -20,7 +20,7 @@ import com.revature.daoimpl.UserDaoImpl;
 import com.revature.models.User;
 import com.revature.util.ConnectionUtil;
 
-public class AdminControl {
+public class AdminControl { //check the activate account part maybe need to comment it out
 	
 	public static ConnectionUtil cu =  ConnectionUtil.getInstance();
 	

@@ -95,10 +95,5 @@ public class Acct {
 				+ "]";
 	}
 
-	public void deposit(double amount) {
-		// TODO Auto-generated method stub
-		
-	}
-
 	
 }

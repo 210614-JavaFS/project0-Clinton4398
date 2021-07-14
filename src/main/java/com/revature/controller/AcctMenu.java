@@ -56,18 +56,12 @@ public class AcctMenu extends Input {
 			ResultSet resultsavings = null;
 			
 			AcctDaoImpl adi = new AcctDaoImpl();
-			boolean accountActive = Input.checkActiveAccount(username);
-			if(accountActive) {
+			//boolean accountActive = Input.checkActiveAccount(username);
+			
 				if (adi.getAccountsByID(username).isEmpty()) {
 				System.out.println("Create an account with us \n ");
 				createNewBankAccount();
 				}
-			}
-			else 
-			{
-				System.out.println("Your account is not activated. Please wait until its activated.");
-				System.exit(0);
-			}
 
 			System.out.println("Enter an account number to access it: ");
 			Scanner key = new Scanner(System.in);

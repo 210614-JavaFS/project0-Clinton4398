@@ -21,7 +21,7 @@ public interface UserDao {
 
 		public boolean doesPasswordMatch(String password, String username) throws SQLException;
 		
-		public boolean updateActive(boolean active) throws SQLException;
+		//public boolean updateActive(boolean active) throws SQLException;
 
 	}
 

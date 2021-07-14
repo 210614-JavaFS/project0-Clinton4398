@@ -77,7 +77,7 @@ public class Input extends UserDaoImpl {
 		acctMenu.accountMenuOptions(username);
 
 	}
-	public static boolean checkActiveAccount(String username) throws SQLException{
+	/**public static boolean checkActiveAccount(String username) throws SQLException{
 		ResultSet rs = null;
 		ConnectionUtil cul = new ConnectionUtil();
 		Connection connt = cul.getConnection();
@@ -94,8 +94,7 @@ public class Input extends UserDaoImpl {
 			
 		}
 		
-		return activated;
-	}
+		return activated;**/
 
 
 	//creates a new account after the user logs in or registers

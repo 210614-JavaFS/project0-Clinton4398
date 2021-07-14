@@ -6,19 +6,19 @@ public class User {
 	private	String password;
 	private String firstname;
 	private String lastname;
-	protected boolean active;
+	//protected boolean active;
 	
 	public User(){
 		super();
 	}
 
-	public User(String username, String password, String firstname, String lastname, boolean active){
+	public User(String username, String password, String firstname, String lastname){
 		super();
 		this.username = username;
 		this.password = password;
 		this.firstname = firstname;
 		this.lastname = lastname;
-		this.active = active;
+		//this.active = active;
 	}
 
 	public String getUsername() {
@@ -53,13 +53,13 @@ public class User {
 		this.lastname = lastname;
 	}
 	
-	public void setActive(boolean active) {
+	/**public void setActive(boolean active) {
 		this.active = active;
 	}
 	
 	public boolean isActive() {
 		return active;
-	}
+	}**/
 	
 	@Override 
 	public int hashCode()
@@ -108,6 +108,6 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [username=" + username + ", password=" + password + ", firstname=" + firstname + ", lastname="
-				+ lastname + ", active= " + active + ", toString()=" + super.toString() + "]";
+				+ lastname + "]";
 	}
 }
